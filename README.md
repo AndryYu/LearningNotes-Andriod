@@ -36,11 +36,11 @@
 * [性能优化](https://github.com/AndryYu/LearningNotes-Andriod/tree/master/part2/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
 
 ## 第三部分
-* [Framework(Android)](https://github.com/AndryYu/LearningNotes-Andriod/tree/master/part3/Framework)
+* [深入解析Android 5.0系统](https://github.com/AndryYu/LearningNotes-Andriod/tree/master/part3/Framework)
 
 * [Jvm理解](https://github.com/AndryYu/LearningNotes-Andriod/tree/master/part3/Jvm%E7%90%86%E8%A7%A3)
 
-* [test](https://github.com/AndryYu/LearningNotes-Andriod/tree/master/part3/test)
+* [单元测试和UI测试](https://github.com/AndryYu/LearningNotes-Andriod/tree/master/part3/test)
 ## 第四部分
 * [C++](https://github.com/AndryYu/LearningNotes-Andriod/tree/master/part4/C%2B%2B)
 

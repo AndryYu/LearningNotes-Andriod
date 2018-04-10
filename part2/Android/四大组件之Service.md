@@ -1,2 +1,12 @@
 ## 四大组件之Service
 Service是一种计算型组件，用于在后台执行一系列计算任务。由于Service组件工作在后台，因此用户无法直接感知到它的存在。Service组件和Activity组件略有不同，Activity组件只有一种运行模式，即Activity处于启动状态，但是Service组件却有两种状态：启动状态和绑定状态。当Service组件处于启动状态时，这个时候Service内部可以做一些后台计算，并且不需要和外界有直接的交互。尽管Service组件是用于执行后台计算的，但是它本身是运行在**主线程**中的，因此耗时的后台计算仍然需要在单读的线程中去完成。当Service处于绑定状态时，这个时候Service内部同样可以进行后台计算，但是处于这种状态时外界可以很方便地和Service组件进行通信。Service组件也是可以停止的，停止一个Service稍显复杂，需要灵活采用stopService和unBindService这两个方法才能完全停止一个Service组件。
+
+### onStartCommand方法的四种返回值
+* START_STICKY
+  如果service进程被kill掉，保留service的状态为开始状态，但不保留递送的intent对象。随后系统会尝试重新创建service，由于服务状态为开启状态，所以创建服务后一定会调用onStartCommand(Intent，int,int)方法。如果在此期间没有任何启动命令被传递到service，那么参数Intent将为null.
+* START_NOT_STICKY
+  '非粘性'，使用这个返回值时，如果在执行完onStartCommand后，服务被异常kill掉，系统不会自动重启该服务。
+* START_REDELIVER_INTENT
+  重传Intent。使用这个返回值时，如果在执行完onStartCommand后,服务被异常kill掉，系统会自动重启该服务，并将Intent的值传入。
+* START_STICKY_COMPATIBILITY
+  START_STICKY的兼容版本，但不保证服务被kill后一定能重启。

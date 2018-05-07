@@ -1,4 +1,0 @@
-## Android Window框架
-![UI界面框架图](http://upload-images.jianshu.io/upload_images/5361549-1f09ec984d3aabf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-每个Activity都包含一个Window对象，在Android中Window对象由PhoneWindow来实现。PhoneWindow将一个DecorView设置为整个应用窗口的根View。DecorView作为窗口界面的顶层视图，封装了一些窗口操作的通用方法。可以说，DecorView将要显示的具体内容呈现在了PhoneWindow上，这里面的所有View的监听事件，都通过WindowManagerService来进行接收，并通过Activity对象来回调相应地onClickListener。在显示上，它将屏幕分成两个部分，一个是TitleView，另一个是ContentView。看到这里，大家一定看见了一个非常熟悉的布局——ContentView。它是一个ID为content的Framelayout，activity_main.xml就是设置在这样一个Framelayout里。
